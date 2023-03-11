@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Moodle thay thang
-// @version      03.03.2023
-//@match http://*.http://drnguyentt.com//*
-// @description  Auto ed multipe choice answer
+// @version      11.03.2023
+// @match http://*.drnguyentt.com/*
+// @description  Moodle thay thang
 // @author       quochungcyou
-// @include     *
 // @run-at      document-start
-//@license MIT
+// @license MIT
+// @include http://*.drnguyentt.com/*
 
 // ==/UserScript==
 (function() {
