@@ -23,29 +23,18 @@ int kq = 0;
 int a[1005][1005];
 int check[1005];
 int n;
-vector<int> path;
 
-void quaylui(int id, int cur) {
-    //cout << id << " " << cur << "\n";
+
+void dfs(int u) {
+    check[u] = 1;
     for (int i = 1; i <= n; i++) {
-        //cout << "-- " << i << " " << a[cur][i] << " " << check[i] << "\n";
-        if (a[cur][i] == 1 && cur != i) {
-            if (id == n  && i == path[0]) {
-                for (int j = 0; j < path.size(); j++) {
-                    cout << path[j] << " ";
-                }
-                cout << 1 << " ";
-                cout << "\n";
-            } else if (check[i] == 0) {
-                check[i] = 1;
-                path.pb(i);
-                quaylui(id + 1, i);
-                check[i] = 0;
-                path.pop_back();
-            }
+        if (a[u][i] == 1 && check[i] == 0) {
+            cout << min(u, i) << " " << max(u, i) << endl;
+            dfs(i);
         }
     }
 }
+
 
 
 int main() {
@@ -61,11 +50,10 @@ int main() {
             cin >> a[i][j];
         }
     }
+    cout << "DFS tree\n";
+    dfs(start);
 
-    //hamilton
-    path.pb(start);
-    check[start] = 1;
-    quaylui(1, start);
+
 
 
 
