@@ -108,18 +108,7 @@ int main() {
     }
     cout << "dH = " << kq << endl;
     for (auto i : ans) {
-        cout << i.u << " " << i.v << endl;
+        cout << min(i.u,i.v) << " " << max(i.u,i.v) << endl;
     }
-
-
-
-
-
-
-
-
-
-
-
 
 }
